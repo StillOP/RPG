@@ -1,0 +1,14 @@
+flac.lib
+freetype.lib
+jpeg.lib
+ogg.lib
+openal32.lib
+sfml-audio.lib
+sfml-graphics.lib
+sfml-main.lib
+sfml-network.lib
+sfml-system.lib
+sfml-window.lib
+vorbis.lib
+vorbisenc.lib
+vorbisfile.lib
