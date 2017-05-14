@@ -8,4 +8,5 @@ struct Shared
 
 	Window* m_window;
 	EventManager* m_eventManger;
+	int m_id;
 };

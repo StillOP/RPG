@@ -13,13 +13,22 @@ public:
 	void Update(const sf::Time& l_time);
 	void Draw();
 
-	void SelectContinue(EventDetails* l_details);
+	int GetIndex();
 
+	void SelectContinue(EventDetails* l_details);
+	
 private:
-	sf::RectangleShape m_shape;
+	sf::Sprite m_sprite;
+	sf::Texture m_texture[4];
+	sf::CircleShape m_arrow[2];
+
+	sf::Sprite m_background;
+	sf::Texture m_backgroundTexture;
+
 	sf::Font m_font;
 	sf::Text m_text;
 	sf::Text m_text2;
+	int m_index;
 
 	float m_time;
 

@@ -5,26 +5,29 @@
 class Personnage
 {
 public:
-	Personnage(float l_pv, float l_damage, bool l_canAttack, std::string l_path);
+	Personnage(int l_ID, float l_pv, float l_mana, float l_damage, std::string l_path);
 	~Personnage();
 
-	bool canAttack();
 	bool isAlive();
+	float GetMana();
 
-	void Attack(Personnage& l_personnage);
-	void AttackSpecial(Personnage& l_personnage);
-	void Heal(float l_amount);
+	void Attack(Personnage& l_personnage, sf::RectangleShape& l_shape);
+	void AttackSpecial(Personnage& l_personnage, sf::RectangleShape& l_pvShape, sf::RectangleShape& l_manaShape);
+	void Heal(float l_amount, sf::RectangleShape& l_pvShape, sf::RectangleShape& l_manaShape);
 
-	sf::Sprite GetSprite();
+	void Draw(sf::RenderWindow& l_window);
+
 	sf::Vector2f GetPosition();
-	void SetPosition(sf::Vector2f l_position);
-	void SetCanAttack(bool l_canAttack);
+	void SetPosition(float l_x, float l_y);
+	void ChangeTexture(std::string l_path);
+	int GetID();
 
 private:
 	sf::Texture m_personnageTexture;
 	sf::Sprite m_personnage;
 
 	float m_pv;
+	float m_mana;
 	float m_damages;
-	bool m_canAttack;
+	int m_ID;
 };

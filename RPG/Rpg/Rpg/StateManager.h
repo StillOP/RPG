@@ -46,6 +46,14 @@ public:
 
 	Shared* GetShared();
 
+	template<class T>
+	T* GetState() 
+	{ 
+		auto it = std::find(m_states.begin(), m_states.end(), new T(this));
+		BaseState* state = (*it);
+		return static_cast<T*> (state);
+	}
+
 private:
 	template<class T>
 	void CreateState()
